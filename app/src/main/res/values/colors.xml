@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey_text">#5B5B5B</color>
+    <color name="blue_background">#edf0f4</color>
+    <color name="grey_tab_bar">#213555</color>
+    <color name="button">#E8DEF8</color>
+    <color name="colorPressed">#D8C0FD</color> <!-- Red when pressed -->
+    <color name="colorDefault">#E8DEF8</color>
+</resources>
