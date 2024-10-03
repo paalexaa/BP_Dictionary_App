@@ -1,6 +1,5 @@
-package com.example.myapplication
+package com.example.myapplication.UI.Adapters
 
-import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +7,9 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.myapplication.Difficulty
+import com.example.myapplication.R
+import com.example.myapplication.Word_DB
 
 class WordAdapter (private val context: Context, private val arrayList: ArrayList<Word_DB>)
     : ArrayAdapter<Word_DB>(context, R.layout.wordpage_item, arrayList){

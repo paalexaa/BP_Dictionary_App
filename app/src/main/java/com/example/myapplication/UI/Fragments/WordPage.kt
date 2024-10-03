@@ -1,15 +1,15 @@
-package com.example.myapplication
+package com.example.myapplication.UI.Fragments
 
-import android.R
 import android.os.Bundle
-import android.telecom.Call.Details
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import com.example.myapplication.Difficulty
+import com.example.myapplication.R
+import com.example.myapplication.UI.Adapters.WordAdapter
+import com.example.myapplication.Word_DB
 import com.example.myapplication.databinding.FragmentWordPageBinding
 
 class WordPage : Fragment() {
@@ -385,7 +385,7 @@ class WordPage : Fragment() {
             translationFragment.arguments = bundle
 
             parentFragmentManager.beginTransaction()
-                .replace(com.example.myapplication.R.id.fragment_wordpage, translationFragment)
+                .replace(R.id.fragment_wordpage, translationFragment)
                 .addToBackStack(null)
                 .commit()
         }

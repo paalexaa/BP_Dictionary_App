@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.myapplication.UI.Fragments
 
 import android.content.ClipData
 import android.content.ClipboardManager

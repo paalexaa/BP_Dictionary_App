@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_background"
-    tools:context=".Menu">
+    tools:context=".UI.Fragments.Menu">
 
     <ListView
         android:id="@+id/subjects_list"
