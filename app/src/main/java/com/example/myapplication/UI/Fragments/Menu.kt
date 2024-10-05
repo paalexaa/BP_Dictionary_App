@@ -35,20 +35,20 @@ class Menu : Fragment() {
             binding.subjectsList.adapter = adapter
         })
 
-//        binding.subjectsList.setOnItemClickListener { parent, view, position, id ->
-//            val selectedSubject = (binding.subjectsList.adapter as Adapter).getItem(position)
-//
-//            val wordPageFragment = WordPage()
-//            val bundle = Bundle().apply {
-//                putString("name", selectedSubject.name)
-//            }
-//            wordPageFragment.arguments = bundle
-//
-//            parentFragmentManager.beginTransaction()
-//                .replace(R.id.fragment_container, wordPageFragment)
-//                .addToBackStack(null)
-//                .commit()
-//        }
+        binding.subjectsList.setOnItemClickListener { parent, view, position, id ->
+            val selectedSubject = (binding.subjectsList.adapter as Adapter).getItem(position)
+
+            val wordPageFragment = WordPage()
+            val bundle = Bundle().apply {
+                putString("subjectName", selectedSubject.name)
+            }
+            wordPageFragment.arguments = bundle
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, wordPageFragment)
+                .addToBackStack(null)
+                .commit()
+        }
         return binding.root
     }
 }

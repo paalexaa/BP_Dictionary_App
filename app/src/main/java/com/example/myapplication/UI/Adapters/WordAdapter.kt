@@ -7,27 +7,40 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.myapplication.Difficulty
 import com.example.myapplication.R
-import com.example.myapplication.Word_DB
+import com.example.myapplication.WordDatabase.WordEntity
 
-class WordAdapter (private val context: Context, private val arrayList: ArrayList<Word_DB>)
-    : ArrayAdapter<Word_DB>(context, R.layout.wordpage_item, arrayList){
+class WordAdapter (context: Context, private val arrayList: List<WordEntity>)
+    : ArrayAdapter<WordEntity>(context, R.layout.wordpage_item, arrayList){
+
+    private class ViewHolder(view: View) {
+        val wordName: TextView = view.findViewById(R.id.word_name)
+        val difficultyCircle: ImageView = view.findViewById(R.id.imageView)
+    }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
+        val view: View
+        val holder: ViewHolder
 
-        val inflater : LayoutInflater = LayoutInflater.from(context)
-        val view : View = inflater.inflate(R.layout.wordpage_item, null)
+        if (convertView == null) {
+            val inflater = LayoutInflater.from(context)
+            view = inflater.inflate(R.layout.wordpage_item, parent, false)
+            holder = ViewHolder(view)
+            view.tag = holder
+        } else {
+            view = convertView
+            holder = view.tag as ViewHolder
+        }
 
-        val wordName : TextView = view.findViewById(R.id.word_name)
-        val difficultyCircle: ImageView = view.findViewById(R.id.imageView)
+        val word = arrayList[position]
 
-        wordName.text = arrayList[position].wordName
+        holder.wordName.text = word.wordName
 
-        when (arrayList[position].difficulty) {
-            Difficulty.EASY -> difficultyCircle.setImageResource(R.drawable.baseline_circle_green)
-            Difficulty.MEDIUM -> difficultyCircle.setImageResource(R.drawable.baseline_circle_yellow)
-            Difficulty.HARD -> difficultyCircle.setImageResource(R.drawable.baseline_circle_red)
+        when (word.difficulty) {
+            0 -> holder.difficultyCircle.setImageResource(R.drawable.baseline_circle_green)
+            1 -> holder.difficultyCircle.setImageResource(R.drawable.baseline_circle_yellow)
+            2 -> holder.difficultyCircle.setImageResource(R.drawable.baseline_circle_red)
+            else -> holder.difficultyCircle.setImageResource(R.drawable.baseline_circle_green)
         }
 
         return view
