@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.myapplication.R
-import com.example.myapplication.WordDatabase.WordEntity
+import com.example.myapplication.wordDatabase.WordEntity
 
 class WordAdapter (context: Context, private val arrayList: List<WordEntity>)
     : ArrayAdapter<WordEntity>(context, R.layout.wordpage_item, arrayList){

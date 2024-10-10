@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import com.example.myapplication.DataBase.SubjectDao
+import com.example.myapplication.database.SubjectDao
 import com.example.myapplication.R
 import com.example.myapplication.UI.Adapters.Adapter
-import com.example.myapplication.ViewModel.SubjectViewModel
+import com.example.myapplication.viewmodel.SubjectViewModel
 import com.example.myapplication.databinding.FragmentMenuBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

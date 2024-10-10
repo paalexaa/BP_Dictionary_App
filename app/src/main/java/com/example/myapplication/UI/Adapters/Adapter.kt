@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.myapplication.DataBase.Subjects
+import com.example.myapplication.database.Subjects
 import com.example.myapplication.R
 
 class Adapter (private val context: Context, private val subjects: List<Subjects>) : BaseAdapter(){

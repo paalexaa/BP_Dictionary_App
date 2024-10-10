@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/detailedTranslation">
+
+    <fragment
+        android:id="@+id/settings2"
+        android:name="com.example.myapplication.UI.Fragments.Settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settings2_to_translator2"
+            app:destination="@id/translator2" />
+        <action
+            android:id="@+id/action_settings2_to_menu3"
+            app:destination="@id/menu3" />
+    </fragment>
+    <fragment
+        android:id="@+id/wordPage"
+        android:name="com.example.myapplication.UI.Fragments.WordPage"
+        android:label="fragment_word_page"
+        tools:layout="@layout/fragment_word_page" >
+        <action
+            android:id="@+id/action_wordPage_to_detailedTranslation"
+            app:destination="@id/detailedTranslation" />
+    </fragment>
+    <fragment
+        android:id="@+id/translator2"
+        android:name="com.example.myapplication.UI.Fragments.Translator"
+        android:label="Translator" >
+        <action
+            android:id="@+id/action_translator2_to_settings2"
+            app:destination="@id/settings2" />
+        <action
+            android:id="@+id/action_translator2_to_menu3"
+            app:destination="@id/menu3" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailedTranslation"
+        android:name="com.example.myapplication.UI.Fragments.DetailedTranslation"
+        android:label="DetailedTranslation" />
+    <fragment
+        android:id="@+id/menu3"
+        android:name="com.example.myapplication.UI.Fragments.Menu"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menu3_to_wordPage"
+            app:destination="@id/wordPage" />
+        <action
+            android:id="@+id/action_menu3_to_translator2"
+            app:destination="@id/translator2" />
+        <action
+            android:id="@+id/action_menu3_to_settings2"
+            app:destination="@id/settings2" />
+    </fragment>
+</navigation>

@@ -9,11 +9,10 @@ import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.example.myapplication.R
-import com.example.myapplication.UI.Adapters.Adapter
 import com.example.myapplication.UI.Adapters.WordAdapter
-import com.example.myapplication.ViewModel.WordViewModel
-import com.example.myapplication.WordDatabase.WordDao
-import com.example.myapplication.WordDatabase.WordEntity
+import com.example.myapplication.viewmodel.WordViewModel
+import com.example.myapplication.wordDatabase.WordDao
+import com.example.myapplication.wordDatabase.WordEntity
 import com.example.myapplication.databinding.FragmentWordPageBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

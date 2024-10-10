@@ -13,9 +13,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
-import com.example.myapplication.ViewModel.DetailedTranslationViewModel
-import com.example.myapplication.WordDatabase.WordDao
-import com.example.myapplication.WordDatabase.WordEntity
+import com.example.myapplication.viewmodel.DetailedTranslationViewModel
+import com.example.myapplication.wordDatabase.WordDao
+import com.example.myapplication.wordDatabase.WordEntity
 import com.example.myapplication.databinding.FragmentDetailedTranslationBinding
 import dagger.hilt.android.AndroidEntryPoint
 import java.util.Locale
