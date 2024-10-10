@@ -55,10 +55,11 @@ class WordPage : Fragment() {
             val translationFragment = DetailedTranslation()
 
             val bundle = Bundle().apply {
-                putString("wordName", selectedWord.wordName)
-                putString("translations", selectedWord.translations)
-                putString("exampleSentences", selectedWord.exampleSentences)
-                putString("wordLink", selectedWord.wordLink)
+                putInt("wordId", selectedWord.id)
+//                putString("wordName", selectedWord.wordName)
+//                putString("translations", selectedWord.translations)
+//                putString("exampleSentences", selectedWord.exampleSentences)
+//                putString("wordLink", selectedWord.wordLink)
             }
             translationFragment.arguments = bundle
 
