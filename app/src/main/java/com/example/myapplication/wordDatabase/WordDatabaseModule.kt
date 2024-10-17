@@ -1,5 +1,6 @@
 package com.example.myapplication.wordDatabase
 
+import android.app.Application
 import android.content.Context
 import androidx.room.Room
 import dagger.Module
@@ -28,4 +29,9 @@ object WordDatabaseModule {
     @Singleton
     @Provides
     fun provideWordDao(database: WordDatabase) = database.getWordDao()
+
+    @Provides
+    fun provideContext(application: Application): Context {
+        return application.applicationContext
+    }
 }

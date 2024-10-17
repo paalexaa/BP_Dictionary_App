@@ -11,19 +11,17 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import com.example.myapplication.databinding.FragmentTranslatorBinding
-import com.google.mlkit.common.model.DownloadConditions
-import com.google.mlkit.nl.translate.TranslateLanguage
-import com.google.mlkit.nl.translate.Translation
-import com.google.mlkit.nl.translate.TranslatorOptions
+import com.example.myapplication.viewmodel.TranslatorViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Translator : Fragment() {
 
     private lateinit var binding: FragmentTranslatorBinding
     private var items = arrayOf("Slovenčina", "Ukrajinčina", "Angličtina")
-    private var conditions = DownloadConditions.Builder().requireWifi().build()
-    private val speechRecognizer: SpeechRecognizer by lazy {
-        SpeechRecognizer.createSpeechRecognizer(requireContext()) }
+    private val viewModel: TranslatorViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,43 +31,57 @@ class Translator : Fragment() {
 
         val itemsAdapter =
             ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, items)
-
         binding.languageFrom.setAdapter(itemsAdapter)
         binding.languageTo.setAdapter(itemsAdapter)
 
+        setupObservers()
+
         binding.button.setOnClickListener {
-            val options = TranslatorOptions.Builder()
-                .setSourceLanguage(selectFrom())
-                .setTargetLanguage(selectTo())
-                .build()
-
-            val translator = Translation.getClient(options)
-
-            translator.downloadModelIfNeeded(conditions)
-                .addOnSuccessListener {
-                    translator.translate(binding.input.text.toString())
-                        .addOnSuccessListener {
-                            binding.output.text = it
-                        }
-                        .addOnFailureListener {
-                            Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                        }
-                }
-                .addOnFailureListener {
-                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                }
+            val selectFrom = viewModel.selectFrom(binding.languageFrom.text.toString())
+            val selectTo = viewModel.selectTo(binding.languageTo.text.toString())
+            viewModel.translateText(selectFrom, selectTo, binding.input.text.toString())
         }
 
         binding.swap.setOnClickListener {
             swapLanguages()
         }
 
-        binding.micButton.setOnClickListener {
-            startVoiceRecognition()
-        }
+//        binding.micButton.setOnClickListener {
+//            val languageCode = viewModel.selectFrom(binding.languageFrom.text.toString())
+//            viewModel.startVoiceRecognition(languageCode)
+//        }
 
         return binding.root
     }
+
+    private fun setupObservers() {
+        viewModel.translatedText.observe(viewLifecycleOwner) {
+            binding.output.text = it
+        }
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) {
+            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+        }
+
+//        viewModel.speechResult.observe(viewLifecycleOwner) {
+//            if (it != null && it.isNotEmpty()) {
+//                binding.input.setText(it.first())
+//            }
+//        }
+//
+//        viewModel.speechError.observe(viewLifecycleOwner) {
+//            Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+//        }
+    }
+
+//    private fun startVoiceRecognition(languageCode: String) {
+//        val intent = viewModel.startVoiceRecognition(languageCode)
+//        startActivityForResult(intent, 100)
+//    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        viewModel.speechResult(requestCode, resultCode, data)
+//    }
 
     private fun swapLanguages() {
         val fromLanguage = binding.languageFrom.text.toString()
@@ -77,51 +89,5 @@ class Translator : Fragment() {
 
         binding.languageFrom.setText(toLanguage, false)
         binding.languageTo.setText(fromLanguage, false)
-    }
-
-
-    private fun selectFrom(): String {
-        return when (binding.languageFrom.text.toString()) {
-
-            "" -> TranslateLanguage.SLOVAK
-            "Slovenčina" -> TranslateLanguage.SLOVAK
-            "Ukrajinčina" -> TranslateLanguage.UKRAINIAN
-            "Angličtina" -> TranslateLanguage.ENGLISH
-            else -> TranslateLanguage.SLOVAK
-        }
-    }
-
-    private fun selectTo(): String {
-        return when (binding.languageTo.text.toString()) {
-
-            "" -> TranslateLanguage.UKRAINIAN
-            "Slovenčina" -> TranslateLanguage.SLOVAK
-            "Ukrajinčina" -> TranslateLanguage.UKRAINIAN
-            "Angličtina" -> TranslateLanguage.ENGLISH
-            else -> TranslateLanguage.UKRAINIAN
-        }
-    }
-
-    private fun startVoiceRecognition() {
-        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-            putExtra(RecognizerIntent.EXTRA_LANGUAGE, selectFrom())
-            putExtra(RecognizerIntent.EXTRA_PROMPT, "Speak now...")
-        }
-        startActivityForResult(intent, REQUEST_CODE_SPEECH_INPUT)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == REQUEST_CODE_SPEECH_INPUT && resultCode == AppCompatActivity.RESULT_OK) {
-            val result = data?.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
-            if (!result.isNullOrEmpty()) {
-                binding.input.setText(result[0])
-            }
-        }
-    }
-
-    companion object {
-        private const val REQUEST_CODE_SPEECH_INPUT = 100
     }
 }
