@@ -55,10 +55,6 @@ class WordPage : Fragment() {
 
             val bundle = Bundle().apply {
                 putInt("wordId", selectedWord.id)
-//                putString("wordName", selectedWord.wordName)
-//                putString("translations", selectedWord.translations)
-//                putString("exampleSentences", selectedWord.exampleSentences)
-//                putString("wordLink", selectedWord.wordLink)
             }
             translationFragment.arguments = bundle
 
@@ -79,6 +75,7 @@ class WordPage : Fragment() {
                 }
                 val adapter = WordAdapter(requireContext(), ArrayList(filteredList))
                 binding.wordList.adapter = adapter
+                wordsList = filteredList
                 return true
             }
         })

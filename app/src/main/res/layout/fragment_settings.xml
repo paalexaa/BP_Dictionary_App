@@ -1,18 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/blue_background"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".UI.Fragments.Settings">
 
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tv_cardView"
+        android:layout_width="350dp"
+        android:layout_height="500dp"
+        android:layout_gravity="center"
+        android:elevation="4dp"
+        android:radius="40dp"
+        android:layout_marginBottom="25dp"
+        app:cardBackgroundColor="#DBE2F9">
+
+        <TextView
+            android:id="@+id/tv_word"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Word"
+            android:textColor="@color/grey_text"
+            android:fontFamily="@font/montserrat_bold"
+            android:textSize="22sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_translation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Translation"
+            android:textColor="@color/grey_text"
+            android:fontFamily="@font/montserrat_regular"
+            android:textSize="22sp"
+            android:layout_gravity="center"
+            android:layout_below="@id/tv_word"/>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Menu Settings"
-        android:textSize="26dp"
-        android:layout_gravity="center"/>
+        android:layout_height="50dp"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="#7C445E91"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Zobraziť odpoveď"
+        android:textColor="@color/white"
+        android:textSize="16sp">
 
+    </Button>
 
-</FrameLayout>
+</LinearLayout>

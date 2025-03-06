@@ -2,6 +2,7 @@ package com.example.myapplication.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
 import com.example.myapplication.repository.WordRepository
 import com.example.myapplication.wordDatabase.WordEntity
 import dagger.hilt.android.lifecycle.HiltViewModel

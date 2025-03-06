@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue_background"
+    android:clickable="true"
+    android:focusable="true"
     tools:context=".UI.Fragments.WordPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,8 +64,8 @@
 
     <ListView
         android:id="@+id/word_list"
-        android:layout_width="408dp"
-        android:layout_height="620dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:divider="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.33"

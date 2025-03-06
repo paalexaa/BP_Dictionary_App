@@ -12,4 +12,7 @@ interface WordDao {
 
     @Query("SELECT * FROM words WHERE id = :wordId LIMIT 1")
     fun getWordById(wordId: Int): LiveData<WordEntity>
+
+    @Query("SELECT * FROM words ORDER BY RANDOM() LIMIT 1")
+    fun getRandomWord(): LiveData<WordEntity>
 }
