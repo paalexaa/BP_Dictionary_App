@@ -50,17 +50,17 @@ This Android mobile application is designed to support **Ukrainian first-year st
 
 ## Screenshots
 ### Translator
-![Translator](D:\del_BP\Media\TranslatorFragment.png)
+![TranslatorFragment](https://github.com/user-attachments/assets/ae772d7b-683a-41ae-9d4e-a878b7cb882d)
 
 ### Subjects List
-![Subjects List](D:\del_BP\Media\SubjectsFragment.png)
+![SubjectsFragment](https://github.com/user-attachments/assets/3b39fc8a-bc98-4b8f-93ab-83c88b8e09ce)
 
 ### Words List
-![Words List](D:\del_BP\Media\WordsFragment.png)
+![WordsFragment](https://github.com/user-attachments/assets/e8d38efe-28ef-4a12-a0bb-afa81f074af9)
 
 ### Word Detail
-![Word Detail](D:\del_BP\Media\WordInfoFragment.png)
+![WordInfoFragment](https://github.com/user-attachments/assets/4534d503-bffb-4c4d-81f6-e654df19bd4e)
 
 ### Flashcards
-![Flashcards_sk](D:\del_BP\Media\FlashCardTranslationFragment.png)
-![Flashcards_ua](D:\del_BP\Media\FlashCardFragment.png)
+![FlashCardTranslationFragment](https://github.com/user-attachments/assets/95420e48-727d-4035-836b-7ec7677a48ca)
+![FlashCardFragment](https://github.com/user-attachments/assets/683552e3-f49c-43ad-b801-bf3da2a68913)
