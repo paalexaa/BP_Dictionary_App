@@ -50,17 +50,17 @@ This Android mobile application is designed to support **Ukrainian first-year st
 
 ## Screenshots
 ### Translator
-![Translator](![TranslatorFragment](https://github.com/user-attachments/assets/9cabc226-78cd-4892-ae14-9f70c7c477e3))
+![Translator](D:\del_BP\Media\TranslatorFragment.png)
 
 ### Subjects List
-![Word List](![SubjectsFragment](https://github.com/user-attachments/assets/f633ba79-26f0-4c3a-b965-9605a15d16e0))
+![Subjects List](D:\del_BP\Media\SubjectsFragment.png)
 
 ### Words List
-![Word List](![WordsFragment](https://github.com/user-attachments/assets/7e404dc0-c08f-4199-b01b-9e37813f1f49))
+![Words List](D:\del_BP\Media\WordsFragment.png)
 
 ### Word Detail
-![Word Detail](![WordInfoFragment](https://github.com/user-attachments/assets/8d9bf45b-4493-4935-a38e-c144c35beec6))
+![Word Detail](D:\del_BP\Media\WordInfoFragment.png)
 
 ### Flashcards
-![Flashcards_sk](![FlashCardTranslationFragment](https://github.com/user-attachments/assets/50e42234-9a4e-4e0e-896b-3bed749e0481))
-![Flashcards_ua](![FlashCardFragment](https://github.com/user-attachments/assets/a8764c46-dab8-459a-8733-51e32780462d))
+![Flashcards_sk](D:\del_BP\Media\FlashCardTranslationFragment.png)
+![Flashcards_ua](D:\del_BP\Media\FlashCardFragment.png)
