@@ -49,18 +49,30 @@ This Android mobile application is designed to support **Ukrainian first-year st
 ---
 
 ## Screenshots
-### Translator
-![TranslatorFragment](https://github.com/user-attachments/assets/ae772d7b-683a-41ae-9d4e-a878b7cb882d)
 
-### Subjects List
-![SubjectsFragment](https://github.com/user-attachments/assets/3b39fc8a-bc98-4b8f-93ab-83c88b8e09ce)
+<h4>🗣 Translator</h4>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/ae772d7b-683a-41ae-9d4e-a878b7cb882d" width="250"/>
+</p>
 
-### Words List
-![WordsFragment](https://github.com/user-attachments/assets/e8d38efe-28ef-4a12-a0bb-afa81f074af9)
+<h4>📚 Subjects List</h4>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3b39fc8a-bc98-4b8f-93ab-83c88b8e09ce" width="250"/>
+</p>
 
-### Word Detail
-![WordInfoFragment](https://github.com/user-attachments/assets/4534d503-bffb-4c4d-81f6-e654df19bd4e)
+<h4>📝 Words List</h4>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/e8d38efe-28ef-4a12-a0bb-afa81f074af9" width="250"/>
+</p>
 
-### Flashcards
-![FlashCardTranslationFragment](https://github.com/user-attachments/assets/95420e48-727d-4035-836b-7ec7677a48ca)
-![FlashCardFragment](https://github.com/user-attachments/assets/683552e3-f49c-43ad-b801-bf3da2a68913)
+<h4>📖 Word Detail</h4>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/4534d503-bffb-4c4d-81f6-e654df19bd4e" width="250"/>
+</p>
+
+<h4>🧠 Flashcards</h4>
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/95420e48-727d-4035-836b-7ec7677a48ca" width="250"/>
+  <img src="https://github.com/user-attachments/assets/683552e3-f49c-43ad-b801-bf3da2a68913" width="250"/>
+</p>
+
